@@ -21,6 +21,9 @@ mongoose.connect(MONGO_URI)
 .catch(err => console.error("❌ Erreur de connexion MongoDB :", err));
 
 // Routes
+app.get("/", (req, res) => {
+  res.send("🚀 API Mini-Blog is running on Railway!");
+});
 app.use('/api', postRoutes);
 
 app.listen(PORT, () => {
