@@ -6,8 +6,8 @@ const postRoutes = require('./routes/postRoutes');
 require('dotenv').config();
 
 
-const MONGO_URI = "mongodb://mongo:XWvcvAItNMjxoHyICzWcErvRJQeUYIBG@mongodb.railway.internal:27017/mini-api";
-const PORT = 3000;
+const MONGO_URI = process.env.MONGO_URI;
+const PORT = process.env.port || 3000;
 
 const app = express();
 
@@ -16,9 +16,6 @@ app.use(bodyParser.json());
 
 // Connexion à MongoDB (assure-toi d’avoir une base de données MongoDB en ligne comme MongoDB Atlas)
 // Connexion avec authentification
-
-
-
 mongoose.connect(MONGO_URI)
 .then(() => console.log("✅ Connexion MongoDB réussie !"))
 .catch(err => console.error("❌ Erreur de connexion MongoDB :", err));
