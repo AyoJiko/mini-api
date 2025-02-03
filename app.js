@@ -24,7 +24,7 @@ app.use(cors());
 //   allowedHeaders: ["Content-Type", "Authorization"], // 🔹 Autorise seulement ces headers
 // };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 // Middleware pour parser le corps des requêtes
 app.use(bodyParser.json());
